@@ -1,36 +1,36 @@
-<div class="container">
-        <div class="row">
-            <div class="column">
-
-                    <table class="table table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Avail</th>
-                                <th>SLA</th>
-                                <th>NotReady</th>
-                                <th>LCW</th>
-                                <th>CW</th>
-                                <th>Staffed</th> 
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr *ngFor="let d of details">
-                                <td>{{d.ali}}</td>
-                                <td>{{d.sl}}</td>
-                                <td>{{d.nr}}</td>
-                                <td>{{d.lcq}}</td>
-                                <td>{{d.ali}}</td>
-                                <td>{{d.ali}}</td>
-                              </tr> 
-                            </tbody>
-                          </table>
-
-            </div>
-            <div class="column">
-                    <iframe src="http://forecabox.foreca.com/get/44198" width="300" height="250" marginwidth="0" 
-                    marginheight="0" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
-            </div>
-        </div>
-       
-      </div>
+ 
+      <div id="sidebar-left">
+				<table class="table table-bordered" style="margin-left:10px;box-shadow: 2px 1px 21px 6px grey;">
+					<thead style="background-color:#BF2E0E">
+					  <tr style="color:#B2B770">
+						<th></th>
+						<th>CW</th>
+						<th>LCW</th>
+						<th>Staffed</th>
+						<th>Avail</th>
+						<th>NotReady</th>
+						<th>SLA</th>
+					  </tr>
+					</thead>
+					<tbody>
+            <tr *ngFor="let d of details">
+              <td style="font-weight: 900;">{{d.grpName}}</td>
+              <td style="font-weight: 700; ">{{d.ciq}}</td>
+              <td style="font-weight: 700;">{{d.lcq}}</td>
+              <td style="font-weight: 700;" >{{d.ali}}</td>
+              <td style="font-weight: 700;">{{d.avl}}</td>
+              <td style="font-weight: 700;">{{d.nr}}</td>
+              <td style="font-weight: 700;">{{d.sl}} %</td>
+            </tr> 
+					</tbody>
+				  </table>
+		
+		</div>
+	 
+		<div id="sidebar-right">
+		  <span style="padding-left:30px;">
+			 <iframe src="http://forecabox.foreca.com/get/44198" width="800" height="300" marginwidth="0" 
+	marginheight="0" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+		  </span>
+		</div>
       

@@ -10,7 +10,7 @@ export class FooterComponent implements OnInit {
 
   message : Message = {
     msgID: 1,
-    msg: 'Welcome',
+    msg: 'Welcome To TCF Bank Customer Service Center',
     displayMsg :' Test'
   };
   
