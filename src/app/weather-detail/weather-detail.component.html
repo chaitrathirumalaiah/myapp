@@ -1,6 +1,6 @@
  
       <div id="sidebar-left">
-				<table class="table" style=" height: 70%;   border: 2px solid #333;margin-left:10px;box-shadow: 2px 1px 21px 6px white;">
+				<table class="table" style="border: 2px solid #333;margin-left:10px;box-shadow: 2px 1px 21px 6px white; height:450px;">
 					<thead style="background-color:#BF2E0E">
 					  <tr style="color:#B2B770">
 						<th></th>
@@ -13,15 +13,15 @@
 					  </tr>
 					</thead>
 					<tbody>
-            <tr *ngFor="let d of details" style=" border-bottom: 2px solid black;
-            border-top: 2px solid black;">
+            <tr *ngFor="let d of details;let index =index;let isOdd=odd;" [class.active]="isOdd"   style=" border-bottom: 2px solid black;
+            border-top: 2px solid black;" class="active">
               <td style="font-weight: 900;">{{d.grpName}}</td>
               <td style="font-weight: 700; ">{{d.ciq}}</td>
               <td style="font-weight: 700;">{{d.lcq}}</td>
               <td style="font-weight: 700;" >{{d.ali}}</td>
               <td style="font-weight: 700;">{{d.avl}}</td>
               <td style="font-weight: 700;">{{d.nr}}</td>
-              <td style="font-weight: 700;">{{d.sl}} %</td>
+              <td style="font-weight: 700;font-size: 15px;">{{d.sl}} %</td>
             </tr> 
 					</tbody>
 				  </table>
