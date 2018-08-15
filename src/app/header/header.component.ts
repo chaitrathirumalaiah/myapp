@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MonthServiceLevelService } from '../services/month-service-level.service';
+import { messMonthToDateServiceLevel } from '../mock/mock-month-to-date-service-level';
 
 @Component({
   selector: 'app-header',
@@ -10,12 +11,18 @@ import { MonthServiceLevelService } from '../services/month-service-level.servic
 
 export class HeaderComponent implements OnInit {
 
-  CurMonthSLObj :any;
-  
+  CurMonthSLObj:any;
+  errorMsg: string;
+
   constructor(private monthServiceLevelService:MonthServiceLevelService) { }
 
   ngOnInit() {
-    this.CurMonthSLObj = this.monthServiceLevelService.getMessMonthToDateServiceLevel();
+   // this.CurMonthSLObj = this.monthServiceLevelService.getMessMonthToDateServiceLevel();
+  
+     this.monthServiceLevelService.getMessMonthToDateServiceLevel().subscribe((obj) => { 
+      this.CurMonthSLObj = obj[0];       
+    }, err  => this.errorMsg = <any>err);
+     
   }
 
 }
