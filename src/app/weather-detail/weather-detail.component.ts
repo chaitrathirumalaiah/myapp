@@ -10,12 +10,18 @@ import { WeatherDetail } from '../model/weather-detail';
 export class WeatherDetailComponent implements OnInit {
 
   details : WeatherDetail[] = [];
-  
+  errorMsg: string;
 
   constructor(private weatherDetailsService:WeatherDetailsService) { }
 
   ngOnInit() {
-      this.details =  this.weatherDetailsService.getWeatherDetail();
+    //  this.details =  this.weatherDetailsService.getWeatherDetail();
+
+
+    this.weatherDetailsService.getWeatherDetail().subscribe((obj) => { 
+      this.details = obj;       
+    }, err  => this.errorMsg = <any>err);
+
   }
 
 }
